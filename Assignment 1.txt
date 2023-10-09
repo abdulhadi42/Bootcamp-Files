@@ -1,0 +1,136 @@
+// Task 1:
+using System;
+Console.WriteLine ("Hello, World!");
+
+
+// Task 2:
+using System;
+
+string userName="";
+
+Console.Write("Please Enter your Name: ");
+userName=Console.ReadLine();
+Console.WriteLine ("Hello," + userName);
+
+
+// Task 3:
+using System;
+
+int firstNumber=0;
+int secondNumber=0;
+int sum=0;
+Console.Write("Please Enter First Number: ");
+firstNumber=int.Parse(Console.ReadLine());
+
+Console.Write("Please Enter Second Number: ");
+secondNumber=int.Parse(Console.ReadLine());
+sum=firstNumber+secondNumber;
+Console.WriteLine ("The sum of both given numbers is: " + sum);
+
+
+// Task 4:
+using System;
+
+int number=0;
+int square=0;
+Console.Write("Please Enter the Number: ");
+number=int.Parse(Console.ReadLine());
+square=number^2;
+
+Console.WriteLine ("The square number is: " + square);
+
+// Task 5:
+using System;
+
+for (int i=2;i<=100;i=i+2){
+    Console.WriteLine (i);
+}
+
+
+// Task 6:
+using System;
+
+int number=0;
+int sum=0;
+Console.Write("Please Enter the Number: ");
+number=int.Parse(Console.ReadLine());
+
+for (int i=1;i<=number;i++){
+    sum=sum+i;
+}
+Console.WriteLine ("The Sum of Numbers from 1 to " + number + " is: "+ sum);
+
+
+// Task 7:
+using System;
+for (int number = 0;number<=12;number++){
+    Console.WriteLine ("The Table of Number "+number+ " is as follows: ");
+    for (int i=0;i<=10;i++){
+        Console.WriteLine (number+ " x " + i + " = " +number*i);
+    }
+}
+
+
+// Task 8:
+using System;
+int number=0;
+bool isPrime=true;
+Console.Write("Please Enter the Number: ");
+number=int.Parse(Console.ReadLine());
+
+for (int i =1;i<=number;i++){
+    for (int j=2;j<=i/2;j++){
+        if(i%j==0){
+            isPrime=false;
+            break;
+        }
+    }
+    if (isPrime){
+        Console.WriteLine(i);
+    }
+}
+
+
+
+// Task 9:
+using System;
+int number=0;
+int product=1;
+Console.Write("Please Enter the Number: ");
+number=int.Parse(Console.ReadLine());
+for (int i =1;i<=number;i++){
+    product=product*i;
+}
+Console.Write("The Factorial of "+number+" is: " + product);
+
+
+// Task 10:
+using System;
+int number=0;
+int x=1;
+int y=1;
+int c=0;
+int count=2;
+
+Console.Write("Please Enter the Number: ");
+number=int.Parse(Console.ReadLine());
+if (number==0){
+    Console.WriteLine("");
+}else if(number==1){
+    Console.WriteLine(1);
+    
+}else if(number==2){
+    Console.WriteLine(1);
+    Console.WriteLine(1);
+}else{
+    Console.WriteLine(1);
+    Console.WriteLine(1);
+    while(count<number){
+        c=x+y;
+        x=y;
+        y=c;
+        Console.WriteLine(c);
+        count++;
+    
+    }
+}
