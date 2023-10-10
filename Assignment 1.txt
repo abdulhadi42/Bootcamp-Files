@@ -35,7 +35,7 @@ int number=0;
 int square=0;
 Console.Write("Please Enter the Number: ");
 number=int.Parse(Console.ReadLine());
-square=number^2;
+square=number*number;
 
 Console.WriteLine ("The square number is: " + square);
 
