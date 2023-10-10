@@ -1,0 +1,163 @@
+// Codlity demo
+string s = "abcdefgh";
+string reverse="";
+for (int i = s.Length-1; i >=0 ; i--)
+{
+ reverse = reverse + s[i];
+}
+Console.WriteLine(reverse);
+
+
+//Task 11
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<int> positions= new List<int> ();
+            int[] sampleArray = new int[5] { 1, 2, 5, 4, 5 };
+            int number = 0;
+
+
+            for(int i = 0; i < sampleArray.Length; i++)
+            {
+                Console.Write(sampleArray[i]+" ");
+
+            }
+            Console.WriteLine();
+
+            Console.Write("Enter the number to search in the above array: ");
+            number = int.Parse(Console.ReadLine());
+
+            for(int i = 0; i < sampleArray.Length; i++)
+            {
+                if (sampleArray[i] == number)
+                {
+                    positions.Add(i + 1);
+                }
+            }
+
+            if (positions.Count == 0)
+            {
+                Console.WriteLine("The number does not exists in array!!");
+
+            }
+            else { 
+                Console.WriteLine("The number "+ number+ " is available at the following Position(s): ");
+
+                for (int i = 0; i < positions.Count; i++)
+                {
+                    Console.Write(positions[i] + " ");
+
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+
+//Task 12:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static bool isPalindrome(string s)
+        {
+            for(int i = 0; i <= ((int) s.Length / 2)-1; i++)
+            {
+                if (s[i] != s[s.Length - 1 - i]) 
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the string to check: ");
+            string s = Console.ReadLine();
+            
+            if (isPalindrome(s))
+            {
+                Console.WriteLine("The Entered String is Palindrome");
+            }
+            else
+            {
+                Console.WriteLine("The Entered String is NOT Palindrome");
+
+            }
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+//Task 13:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static int finder(int[] s)
+        {
+            int smallest = s[0];
+            int largest = s[0];
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] <= smallest)
+                {
+                    smallest = s[i];
+                }
+                if (s[i] >= largest)
+                {
+                    largest = s[i];
+                }
+            }
+            
+            return smallest,largest;
+        }
+        static void Main(string[] args)
+        {
+            //Console.Write("Enter the string to check: ");
+            //string s = Console.ReadLine();
+            
+            
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
