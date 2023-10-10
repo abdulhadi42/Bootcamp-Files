@@ -74,11 +74,12 @@ for (int number = 0;number<=12;number++){
 // Task 8:
 using System;
 int number=0;
-bool isPrime=true;
+bool isPrime;
 Console.Write("Please Enter the Number: ");
 number=int.Parse(Console.ReadLine());
 
 for (int i =1;i<=number;i++){
+    isPrime = true;
     for (int j=2;j<=i/2;j++){
         if(i%j==0){
             isPrime=false;
