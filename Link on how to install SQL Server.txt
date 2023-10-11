@@ -1,0 +1,2 @@
+You can watch the following Youtube Video to install and setup Microsoft SQL Server on your personal machines:
+https://youtu.be/iaUXjTL_F9U?si=OBLthLIkPGujGlBv

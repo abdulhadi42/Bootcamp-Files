@@ -1,0 +1,3 @@
+Server Name: cmdlhrdb01
+
+Login with Windows Authentication
