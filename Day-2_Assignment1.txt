@@ -1,0 +1,468 @@
+//Task 11
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<int> positions= new List<int> ();
+            int[] sampleArray = new int[5] { 1, 2, 5, 4, 5 };
+            int number = 0;
+
+
+            for(int i = 0; i < sampleArray.Length; i++)
+            {
+                Console.Write(sampleArray[i]+" ");
+
+            }
+            Console.WriteLine();
+
+            Console.Write("Enter the number to search in the above array: ");
+            number = int.Parse(Console.ReadLine());
+
+            for(int i = 0; i < sampleArray.Length; i++)
+            {
+                if (sampleArray[i] == number)
+                {
+                    positions.Add(i + 1);
+                }
+            }
+
+            if (positions.Count == 0)
+            {
+                Console.WriteLine("The number does not exists in array!!");
+
+            }
+            else { 
+                Console.WriteLine("The number "+ number+ " is available at the following Position(s): ");
+
+                for (int i = 0; i < positions.Count; i++)
+                {
+                    Console.Write(positions[i] + " ");
+
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+
+
+//Task 12:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+	
+	// Function to check Palindrome/
+	// Iterates till the half of string considering the case of
+	// even and odd characters and checks characters from oposite ends.
+        static bool isPalindrome(string s)
+        {
+            for(int i = 0; i <= ((int) s.Length / 2)-1; i++)
+            {
+                if (s[i] != s[s.Length - 1 - i]) 
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the string to check: ");
+            string s = Console.ReadLine();
+            
+            if (isPalindrome(s))
+            {
+                Console.WriteLine("The Entered String is Palindrome");
+            }
+            else
+            {
+                Console.WriteLine("The Entered String is NOT Palindrome");
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+//Task 13:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+	//Iterates over an array of integers and returns an array
+	// of 2 numbers. 1st is smallest and 2nd is Largest
+        static int[] finder(int[] s)
+        {
+            
+            int[] numbers = new int[2] { s[0], s[0] };
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] <= numbers[0])
+                {
+                    numbers[0] = s[i];
+                }
+                if (s[i] >= numbers[1])
+                {
+                    numbers[1] = s[i];
+                }
+            }
+
+            return numbers;
+        }
+        static void Main(string[] args)
+        {
+            int[] sampleArray = new int[] {1,2,3,4,5,6,7,-8};
+            int[] numbers = finder(sampleArray);
+            Console.WriteLine("The Smallest number in list is: " + numbers[0]);
+            Console.WriteLine("The Largest number in list is: " + numbers[1]);
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+//Task 14:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {           
+            Console.Write("Enter the number of rows: ");
+            int rows=int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= rows; i++)
+            {   
+                Console.WriteLine(new String('*', i));
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+//Task 15:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+                        
+            Console.Write("Enter the number of rows: ");
+            int rows=int.Parse(Console.ReadLine());
+            int interation = 0;
+            for (int i = 1; i <= rows; i++)
+            {
+                
+                Console.WriteLine(new String(' ', rows-i)+new String('*', i+ interation));
+                interation++;
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+//Task 16:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    { 
+        static void Main(string[] args)
+        {               
+            Console.Write("Please enter the String: ");
+            string s = Console.ReadLine();
+            string reverse ="";
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                reverse = reverse + s[i];
+            }
+            Console.WriteLine("The Reverse of String is: "+reverse);
+            Console.ReadLine();
+        }
+    }
+}
+
+
+//Task 17:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            List<int> sortedList = new List<int>();
+            Console.Write("Please enter the number (e to exit): ");
+            string input = Console.ReadLine();
+            int number = 0;
+            // if user quits before entering numbers
+            if (input == "e")
+            {
+                Console.Write("The Array is empty.");
+            }
+            else
+            {
+                while (input != "e")
+                {
+                    number = int.Parse(input);
+                    if (sortedList.Count == 0)
+                    {
+                        sortedList.Add(number);
+                    }
+                    else
+                    {
+                        for (int i = 0; i < sortedList.Count; i++)
+                        {
+                            if (sortedList[i] >= number)
+                            {
+                                sortedList.Add(sortedList[sortedList.Count - 1]);
+                                for (int j = sortedList.Count - 1; j > i; j--)
+                                {
+                                    sortedList[j] = sortedList[j - 1];
+                                }
+                                sortedList[i] = number;
+                                break;
+                            }
+                            else if (i == sortedList.Count - 1)
+                            {
+                                sortedList.Add(number);
+                                break;
+                            }
+
+                        }
+                    }
+
+                    for (int i = 0; i < sortedList.Count; i++)
+                    {
+                        Console.Write(sortedList[i]+" ");
+
+                    }
+                    Console.WriteLine();
+                    Console.Write("Please enter the number (e to exit): ");
+                    input = Console.ReadLine();
+                }
+            }
+
+
+
+
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+//Task 18:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the number: ");
+            int number = int.Parse(Console.ReadLine());
+            List<int> factors = new List<int>();
+            factors.Add(1);
+            for (int i = 2; i <= number/2; i++)
+            {
+                if (number%i==0)
+                {
+                    factors.Add(i);
+
+                }
+            }
+
+            if (factors.Sum()==number)
+            {
+                Console.WriteLine("The Number is Perfect");
+
+            }
+            else
+            {
+                Console.WriteLine("The Number is NOT Perfect");
+
+            }
+
+
+
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+//Task 19:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the number: ");
+            int number = int.Parse(Console.ReadLine());
+            List<int> allNumbers = new List<int>();
+            string numString = "";
+            for (int i = 1; i <= number; i++)
+            {
+                //numString=numString+i.ToString();
+                allNumbers.Add(i);
+            }
+            for (int i = 0; i < number; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    numString=numString+ allNumbers[j].ToString();
+
+                }
+                Console.WriteLine(numString);
+                numString = "";
+
+
+            }
+
+
+
+
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+//Task 20:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            string str1 = "ABCDGH";
+            string str2 = "AEDFHR";
+
+            int m = str1.Length;
+            int n = str2.Length;
+
+
+            int[,] table = new int[m + 1, n + 1];
+
+            for (int i = 0; i <= m; i++)
+            {
+                for (int j = 0; j <= n; j++)
+                {
+                    if (i == 0 || j == 0)
+                        table[i, j] = 0;
+                    else if (str1[i - 1] == str2[j - 1])
+                        table[i, j] = table[i - 1, j - 1] + 1;
+                    else
+                        table[i, j] = Math.Max(table[i - 1, j],
+                                           table[i, j - 1]);
+                }
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
+
