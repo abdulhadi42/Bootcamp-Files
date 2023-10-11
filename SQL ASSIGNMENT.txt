@@ -1,0 +1,162 @@
+CREATE TABLE Courses(
+  CourseID INT PRIMARY KEY,
+  CouseName VARCHAR(50)
+ )
+
+
+
+
+
+CREATE TABLE Courses(
+  CourseID INT PRIMARY KEY,
+  CourseName VARCHAR(50)
+ );
+
+
+
+
+
+
+INSERT into Courses (CourseID,CourseName)
+VALUES 	(1, "Machine Vision"),
+		(2, "Inteligent Systems"),
+        (3, "Mobile Robotics"),
+        (4, "DSA"),
+        (5, "OOP");
+
+
+
+
+
+INSERT into Students (StudentID,FirstName,LastName,Age,CourseID)
+VALUES 	(1,"Mhammad", "Ali",19,1),
+		(2,"Muhammad", "Ali",20,2),
+		(3,"Muhammad", "Ahmed",22,4),
+		(4,"Ali", "Hamza",18,5),
+		(5,"Muhammad", "Haseeb",24,3),
+		(6,"Usman", "Tariq",20,2),
+		(7,"Shaheer", "Khan",21,5),
+		(8,"Dawood", "Imtiaz",21,4),
+		(9,"Dawood", "Tahir",22,2),
+		(10,"Usman", "Irshad",23,1);
+
+
+
+
+update Students
+set Age=25
+where StudentID=2;
+
+
+
+
+delete from Students where StudentID=4;
+
+
+
+
+select * from Students
+where Age>20;
+
+select FirstName, LastName
+from Students
+where Age>20;
+
+
+
+
+
+select * from Students
+
+inner join Courses on Courses.CourseID = Students.CourseID
+where Students.CourseID=2;
+
+
+
+
+select count(*)
+from Students;
+
+
+
+select avg (Age)
+from Students;
+
+
+
+
+select Firstname, LastName from Students
+where CourseID=null;
+
+
+
+SELECT
+  CourseID,
+  COUNT(CourseID) AS `Occurance` 
+
+FROM
+  Students
+  
+GROUP BY 
+  CourseID
+  
+ORDER BY 
+  `occurance` DESC
+limit 1;
+  
+
+
+
+
+SELECT * FROM Students
+where Age > (select avg(Age) from Students); 
+
+
+
+
+select
+	CourseID,
+	count(*) as Total_Number_of_Students,
+	avg(Age)
+from
+	Students
+group by
+	CourseID
+order by
+	CourseID ASC
+
+
+
+
+
+select
+	*,
+	count(*) as Occurance
+from Students
+where CourseID=null
+Group by CourseID
+
+
+
+
+
+
+
+
+Select * from Students
+where courseID=(select CourseID from Students where StudentID=3)
+
+
+
+
+select
+	CourseID,
+	min(age),
+    max(age)
+from
+	Students
+Group by
+	CourseID
+
+
+
