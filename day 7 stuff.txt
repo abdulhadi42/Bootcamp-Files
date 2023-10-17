@@ -1,0 +1,14 @@
+https://stackoverflow.com/questions/44379560/how-to-enable-cors-in-asp-net-core-webapi
+
+
+$.ajax({
+        url: 'https://localhost:44375/api/Students',
+        type: 'GET',
+		
+        success: function(data) {
+            listStudents(data)
+        },
+		error: function (jqXHR, textStatus, errorThrown) {
+                                    console.log(jqXHR)
+                                },
+    });
