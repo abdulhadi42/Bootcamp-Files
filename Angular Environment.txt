@@ -1,0 +1,11 @@
+0) npm install -g @angular/cli
+1) Go to the Folder where you want to create the Angular Project
+2) Open command prompt at that location by typing CMD
+3) Write this command to create new Angular Project: ng new your-project-name
+4) change the present directory to the project directory using: cd your-project-name
+5) now use this command to serve the project in the browser: ng serve --open (for development)
+6) ng build your-project-name (for production build)
+
+
+https://angular.io/cli
+https://angular.io/tutorial/tour-of-heroes/toh-pt0
